@@ -1,0 +1,1 @@
+# bashScript_AlpindockerFile_nginx
