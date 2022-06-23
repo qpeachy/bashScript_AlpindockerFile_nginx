@@ -1,16 +1,22 @@
 #execution file
 
-#brew update
+#Update package
+brew update
 
-#brew install docker --cask
+#install Docker, --cask allows the installation without needed to manually drag the app in "Applications"
+brew install docker --cask
 
+#open the app via its path
 open /Applications/Docker.app
 
-docker build . -t test
+#run the Dockerfile while naming it
+docker build . -t imageName
 
+#shows all the currents images
 docker images
 
-read -p "Entrée l'id de l'image: " idimage
+#ask the user to manually input the image id and naming this image for the bash file
+read -p "Enter the image id: " idimage
 
-#-p : publish(port d'entrée) -it: instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive
+#-p : publish(port) -d : run container in background and print container ID
 docker run -d -p 8080:80 $idimage
