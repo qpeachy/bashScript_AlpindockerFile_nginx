@@ -46,3 +46,10 @@ read -p "Enter the image id: " idimage
 #-p : publish(port) -d : run container in background and print container ID
 docker run -d -p 8080:80 $idimage
 ```
+Once everything's done you can see the running container with:
+```bash
+docker ps
+```
+and stop any container with:
+```
+docker stop idContainer
